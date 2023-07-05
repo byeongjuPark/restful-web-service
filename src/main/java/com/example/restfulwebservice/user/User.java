@@ -8,12 +8,15 @@ import java.util.Date;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Data
 @AllArgsConstructor
-@JsonIgnoreProperties(value={"password", "ssn"})
+// @JsonIgnoreProperties(value={"password", "ssn"})
+// @JsonFilter("UserInfo") ->  FilterProvider filters = new SimpleFilterProvider().addFilter("UserInfo", filter); 에서 사용
+@JsonFilter("UserInfo")
 public class User {
     private Integer id;
     
