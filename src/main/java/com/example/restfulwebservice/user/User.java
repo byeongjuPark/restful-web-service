@@ -8,8 +8,12 @@ import java.util.Date;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Data
 @AllArgsConstructor
+@JsonIgnoreProperties(value={"password", "ssn"})
 public class User {
     private Integer id;
     
@@ -17,4 +21,9 @@ public class User {
     private String name;
     @Past
     private Date joinDate;
+
+    // @JsonIgnore 클라이언트가 받을 때 넘어가지 않음
+    // @JsonIgnoreProperties 클래스 단위로 관리 할 수 있음.
+    private String password;
+    private String ssn;
 }
