@@ -45,7 +45,8 @@ public class AdminUserController {
 
     // GET v1/users/1 or v1/users/10 --> Stirng
     // int로 선언하면 int로 Mapping 됨.
-    @GetMapping("/v1/users/{id}")
+    //@GetMapping("/v1/users/{id}")
+    @GetMapping(value = "/users/{id}", params = "version=1")
     public MappingJacksonValue retrieveUserV1(@PathVariable int id){
         User user = service.findOne(id);
         if(user == null){
@@ -59,7 +60,9 @@ public class AdminUserController {
 
         return mapping;
     }
-    @GetMapping("/v2/users/{id}")
+    //@GetMapping("/v2/users/{id}")
+    // http://localhost:8484/admin/users/1/?version=2
+    @GetMapping(value = "/users/{id}", params = "version=2")
     public MappingJacksonValue retrieveUserV2(@PathVariable int id){
         User user = service.findOne(id);
 
@@ -79,4 +82,7 @@ public class AdminUserController {
 
         return mapping;
     }
+
+
+
 }
