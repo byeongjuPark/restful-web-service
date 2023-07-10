@@ -22,6 +22,13 @@ import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 
+// 1. URL 방식
+// 2. Request Parameter 방식
+// 3. Header & mime-type
+// 1, 2 는 브라우저에서 실행 가능
+// 3 은 일반 브라우저에서 실행 불가
+// 캐시 메모리가 남아있을때 정상 작동하지 않을 수 있음.
+
 @RestController
 @RequestMapping("/admin")
 public class AdminUserController {
