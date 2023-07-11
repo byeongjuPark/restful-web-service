@@ -1,12 +1,19 @@
 server :
     port: 8484
     
-logging:
-    level:
-        org.springframework: DEBUG
+# logging:
+#     level:
+#         org.springframework: DEBUG
+# swagger 설정
 spring:
     mvc:
         pathmatch:
             matching-strategy: ant_path_matcher
     messages:
         basename: messages
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  # Expose all endpoints
