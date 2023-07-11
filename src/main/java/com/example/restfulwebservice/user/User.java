@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 // @JsonIgnoreProperties(value={"password", "ssn"})
 // @JsonFilter("UserInfo") ->  FilterProvider filters = new SimpleFilterProvider().addFilter("UserInfo", filter); 에서 사용
 @NoArgsConstructor
-@JsonFilter("UserInfo")
+//@JsonFilter("UserInfo")
 public class User {
     private Integer id;
     
