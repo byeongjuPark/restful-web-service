@@ -14,10 +14,28 @@ spring:
     devtools:
       livereload:
         enabled: true
-    security:
-      user:
-        name: username
-        password: root
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          format_sql: true
+    datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/studyjpa?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
+      username: root
+      password: root
+      
+    # security:
+    #   user:
+    #     name: username
+    #     password: root
+logging:
+  level:
+    org.hibernate.type.descriptor.sql: trace
+    org.hibernate: info
+    org.springframework: info
 
 management:
   endpoints:
