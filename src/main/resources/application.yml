@@ -18,18 +18,19 @@ spring:
       show-sql: true
       hibernate:
         ddl-auto: update
+        #use-new-id-generator-mappings: false
       properties:
         hibernate:
           format_sql: true
     datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/studyjpa?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
+      url: jdbc:mysql://localhost:3307/studyjpa?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
       username: root
       password: root
       
     # security:
     #   user:
-    #     name: username
+    #     name: root
     #     password: root
 logging:
   level:
