@@ -6,9 +6,6 @@ RESTful 개발에 대한 학습 레파지토리 with JPA
 2. Validation API
 3. Internationalization 다국어 처리
 4. REST API 버전 관리
-  - URI
-  - Request Parameter
-  - Header
 5. HATEOAS
 6. Swagger
 7. Actuator
